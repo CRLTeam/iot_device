@@ -1,0 +1,44 @@
+
+
+    <div class="sidebar" data="blue">
+      <div class="sidebar-wrapper">
+        <div class="text-neutral text-center">
+          CRL IOT Device Simulator
+        </div>
+
+        <ul class="nav">
+          <li class="{% if 'index' in segment %} active {% endif %}">
+            <a href="/">
+              <i class="tim-icons icon-chart-pie-36"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="{% if 'status' in segment %} active {% endif %}">
+            <a href="/status.html">
+              <i class="tim-icons icon-bulb-63"></i>
+              <p>Status</p>
+            </a>
+          </li>
+          <li class="{% if 'settings' in segment %} active {% endif %}">
+            <a href="/settings.html">
+              <i class="tim-icons icon-settings-gear-63"></i>
+              <p>Settings</p>
+            </a>
+          </li>
+          <li class="{% if 'events' in segment %} active {% endif %}">
+            <a href="/events.html">
+              <i class="tim-icons icon-bullet-list-67"></i>
+              <p>Events</p>
+            </a>
+          </li>
+          <li class="{% if 'scripting' in segment %} active {% endif %}">
+            <a href="/scripting.html">
+              <i class="tim-icons icon-paper"></i>
+              <p>Scripting</p>
+            </a>
+          </li>
+                    
+        </ul>
+        
+      </div>
+    </div>
