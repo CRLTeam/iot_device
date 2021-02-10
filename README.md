@@ -39,8 +39,8 @@ $ # Access the web app in browser: http://DEVICE_IP_ADDRESS:YOUR_PORT/
 | /device/settings         | POST | Set device settings                            | {"default": "close", "monitor": "passive"}                   | 
 | /device/monitor          | GET  | Get log last hour                              |                                                              | 
 | /device/monitor          | POST | Get log from time range                        | {"start": "2021-02-03T00:00:00.000Z", "end": "2021-02-04T00:00:0.000Z"} |
-| /device/simulation       | POST | Set the simulation script                      |                                                              | 
-| /device/simulation/start | GET  | Start the simulation script from the beginning | {"script": [{"command": "open", "length": 3, "wait": "none"}, {"command": "close", "length": 3, "wait": "rand1"}], "repeat": 20} | 
+| /device/simulation       | POST | Set the simulation script                      | {"script": [{"command": "open", "length": 3, "wait": "none"}, {"command": "close", "length": 3, "wait": "rand1"}], "repeat": 20} | 
+| /device/simulation/start | GET  | Start the simulation script from the beginning | | 
 | /device/simulation/start | GET  | Stop the simulation script                     |                                                              |
 
 ​		
