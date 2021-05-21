@@ -12,10 +12,11 @@ urlpatterns = [
     # The home page
     path('', views.index, name='home'),
     path('device/', include('basicdevice.urls')),
+    path('lock/', include('door_lock.urls')),
+    path('reader/', include('card_reader.urls')),
     path('admin/', admin.site.urls),          # Django admin route
 
     # Matches any html file
     re_path(r'^.*\.*', views.pages, name='pages'),
-
 
 ]

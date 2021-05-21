@@ -1,27 +1,29 @@
 from gpiozero import LED
 from time import sleep
 import json
-from basicdevice.monitor import *
+from card_reader.monitor import *
 from app.models import Log, Status, Setting, Simulation
 import random
 from django.db.models import Count
+import requests
 
-greenLED = LED(13)
-redLED = LED(14)
+greenLED = LED(22)
+redLED = LED(23)
+
+def sendswipe(cardID):
+    response = requests.post('http://192.168.2.178/controller/card/swipe/', data = {'card':cardID})
 
 def red(state, time):
     if state=="on":
-        redLED.on()
+       redLED.on()
     if state=="off":
-        redLED.off()
-    actionlog(state)
+       redLED.off()
     
 def green(state, time):
     if state=="on":
         greenLED.on()
     if state=="off":
         greenLED.off()
-    actionlog(state)
 
 def updatestatus(state):
     record = Status.objects.first()

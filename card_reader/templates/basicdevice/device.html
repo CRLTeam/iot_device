@@ -1,0 +1,9 @@
+{% if event_log %}
+    <ul>
+    {% for event in event_log %}
+        <li><a href="/device/getlog/1/">{{ event.event }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No events are available in the log.</p>
+{% endif %}

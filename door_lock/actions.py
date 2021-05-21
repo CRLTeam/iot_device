@@ -6,8 +6,8 @@ from app.models import Log, Status, Setting, Simulation
 import random
 from django.db.models import Count
 
-greenLED = LED(13)
-redLED = LED(14)
+greenLED = LED(17)
+redLED = LED(18)
 
 def red(state, time):
     if state=="on":

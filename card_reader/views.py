@@ -4,24 +4,27 @@ from django.http import HttpResponse
 from django.core.serializers import serialize
 from app.models import Log
 import json
-from basicdevice.actions import *
+from card_reader.actions import *
+from card_reader.monitor import *
 from datetime import datetime, timedelta 
 from datetime import date
 from django.http import JsonResponse
 from django.utils import timezone
+import time
 
 def index(request):
     return HttpResponse("basic device index")
 
 def command(request):
     action = json.loads(request.body)
-    if action["command"]=="open":
+    if action["command"]=="swipe":
         red("off", 0)
         green("on", 0)
-    if action["command"]=="close":
+        time.sleep(5)
         green("off", 0)
         red("on", 0)
-    updatestatus(action["command"])
+
+    actionlog(action["command"] +' '+ action["card"])
     return HttpResponse("command sent %s." % action)
 
 def status(request):

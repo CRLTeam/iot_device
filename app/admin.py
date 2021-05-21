@@ -5,7 +5,7 @@ Copyright (c) 2019 - present AppSeed.us
 
 from django.contrib import admin
 
-from basicdevice.models import Log, Setting, Simulation, Status
+from app.models import Log, Setting, Simulation, Status
 
 admin.site.register(Log)
 admin.site.register(Status)
