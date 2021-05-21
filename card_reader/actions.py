@@ -86,15 +86,8 @@ def scriptrun():
     print(scriptjson["script"])
     while repeat > 0:
         for command in scriptjson["script"]:
-            if command["command"] == "open":
-                red("off", 0)
-                green("on", 0)
-                sleep(command["length"])
-            if command["command"] == "close":
-                green("off", 0)
-                red("on", 0)
-                sleep(command["length"])
-            updatestatus(command["command"])
+            if command["command"] == "swipe":
+                sendswipe(command["card"])
             if command["wait"] == "rand1":
                 sleep(random.randint(5, 30))
             elif command["wait"] == "rand2":
