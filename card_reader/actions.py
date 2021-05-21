@@ -11,7 +11,7 @@ greenLED = LED(22)
 redLED = LED(23)
 
 def sendswipe(cardID):
-    response = requests.post('http://192.168.2.178/controller/card/swipe/', data = {'card':cardID})
+    response = requests.post('http://192.168.2.179:8000/cardhandler/swipe/', data = {"card":cardID})
 
 def red(state, time):
     if state=="on":

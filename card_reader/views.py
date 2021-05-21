@@ -18,11 +18,7 @@ def index(request):
 def command(request):
     action = json.loads(request.body)
     if action["command"]=="swipe":
-        red("off", 0)
-        green("on", 0)
-        time.sleep(5)
-        green("off", 0)
-        red("on", 0)
+       sendswipe(action["card"])
 
     actionlog(action["command"] +' '+ action["card"])
     return HttpResponse("command sent %s." % action)
