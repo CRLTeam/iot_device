@@ -49,7 +49,7 @@ def monitor(request):
         monitorlog = Log.objects.filter(event_date__gte=datetime.now(tz=timezone.utc)+ timedelta(hours=-1))
         logoutput = serialize('json', monitorlog)
 
-    return HttpResponse("monitor log %s." % logoutput)
+    return HttpResponse(logoutput)
 
 def simulation(request):
     sentscript = json.loads(request.body)
